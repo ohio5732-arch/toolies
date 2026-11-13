@@ -14,8 +14,8 @@ function shared.step(self: shared)
 		local humanoid = character.Humanoid
     if not humanoid then continue end
 
-		if hrp:GetAttribute("MoveDirection") ~= humanoid.MoveDirection then -- skip redundant writes
-			hrp:SetAttribute("MoveDirection", humanoid.MoveDirection)
+		if character:GetAttribute("MoveDirection") ~= humanoid.MoveDirection then -- skip redundant writes
+			character:SetAttribute("MoveDirection", humanoid.MoveDirection)
 		end
 	end
 end

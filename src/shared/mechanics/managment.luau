@@ -26,7 +26,7 @@ function managment.logActionInputs(self: managment, player: Player)
   local hrp = character.HumanoidRootPart
   if not hrp then return end 
 
-  hrp:SetAttribute("FMoveDir",MovementAction or Vector2.new(0,0))
+  character:SetAttribute("FMoveDir",MovementAction or Vector2.new(0,0))
   print(MovementAction)
 end
 
@@ -37,7 +37,7 @@ function managment.getCharacterMovementDirection(self: managment, player: Player
   local hrp = character.HumanoidRootPart
   if not hrp then return end
 
-  return hrp:GetAttribute("MoveDirection")
+  return character:GetAttribute("MoveDirection")
 end
 
 function managment.getMovementDirection(self: managment, player: Player) 
@@ -49,7 +49,7 @@ function managment.getMovementDirection(self: managment, player: Player)
   local hrp = character.HumanoidRootPart
   if not hrp then return end 
 
-  return hrp:GetAttribute("FMoveDir")
+  return character:GetAttribute("FMoveDir")
 end
 
 function managment.logQueue(self: managment, player: Player, args: queueArgs) 
@@ -127,7 +127,7 @@ function managment.overrideMovement(self: managment, player: Player, value: bool
   local character = player.Character
   if not character then return end 
 
-  character.HumanoidRootPart:SetAttribute("MovementEnabled", not value)
+  character:SetAttribute("MovementEnabled", not value)
 end
 
 function managment.enableAssistance(self: managment, player: Player, ball: BasePart, value: boolean) 
