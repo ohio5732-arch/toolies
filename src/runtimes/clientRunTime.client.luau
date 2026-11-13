@@ -4,4 +4,4 @@ local engine = require(ReplicatedStorage.engine)
 engine:init(script.Parent.Parent.shared)
 engine:init(Players.LocalPlayer.PlayerScripts.controllers)
 
-engine:simulate()
+engine:start()

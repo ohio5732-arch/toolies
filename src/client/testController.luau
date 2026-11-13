@@ -1,5 +1,7 @@
 local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
+local engine = require(ReplicatedStorage.engine)
 local controller = {}
 
 function controller.init(self: controller) 
@@ -9,9 +11,7 @@ function controller.init(self: controller)
   local manager = character:WaitForChild("ControllerManager")
   local root = character:WaitForChild("HumanoidRootPart")
 
-  for _, inst in {manager, manager:WaitForChild("GroundController"), root:WaitForChild("GroundSensor")} do 
-    RunService:SetPredictionMode(inst, Enum.PredictionMode.On)
-  end
+  RunService:SetPredictionMode(manager, Enum.PredictionMode.On)
 
   for _, ball in pairs(workspace.balls:GetChildren()) do 
     RunService:SetPredictionMode(ball, Enum.PredictionMode.On)

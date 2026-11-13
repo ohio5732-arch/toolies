@@ -5,7 +5,7 @@ local engine = require(ReplicatedStorage.engine)
 engine:init(script.Parent.Parent.shared)
 --engine:init(ServerScriptService.services)
 
-engine:simulate()
+engine:start()
 
 local Inputs = script.Parent.Parent.Inputs
 

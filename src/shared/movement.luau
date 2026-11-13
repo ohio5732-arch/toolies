@@ -16,12 +16,12 @@ function shared.calculateMovement(self: shared, player: Player, deltaTime)
   local controllerManager = character.ControllerManager
   if not controllerManager then return end
   
-  local moveDirection = character.HumanoidRootPart:GetAttribute("MoveDirection")
+  local moveDirection = character:GetAttribute("MoveDirection")
   if not moveDirection then return end 
   
   local hrp = character.HumanoidRootPart
   if not hrp then return end
-  if hrp:GetAttribute("MovementEnabled") == false then return end
+  if character:GetAttribute("MovementEnabled") == false then return end
 
   local flat = Vector3.new(moveDirection.X,0,moveDirection.Z)
 

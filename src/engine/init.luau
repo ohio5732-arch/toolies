@@ -25,6 +25,10 @@ function engine.simulate(self: engine)
   end)
 end
 
+function engine.start(self: engine) 
+  self:simulate()
+end
+
 type engine = typeof(engine)
 
 return engine
